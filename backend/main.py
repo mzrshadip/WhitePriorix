@@ -33,7 +33,7 @@ def load_waiting_requests():
     cursor = connection.cursor()
 
     cursor.execute("""
-        SELECT id, student_name, problem, request_type, priority
+        SELECT id, student_name, student_id, problem, request_type, priority
         FROM requests
         WHERE status = 'waiting'
     """)
@@ -67,6 +67,7 @@ def health_check():
 @app.post("/requests")
 def add_request(
     student_name: str,
+    student_id: str,
     problem: str,
     request_type: str
 ):
@@ -79,10 +80,16 @@ def add_request(
     cursor.execute(
         """
         INSERT INTO requests
-        (student_name, problem, request_type, priority)
-        VALUES (?, ?, ?, ?)
+        (student_name, student_id, problem, request_type, priority)
+        VALUES (?, ?, ?, ?, ?)
         """,
-        (student_name, problem, request_type, priority)
+        (
+            student_name,
+            student_id,
+            problem,
+            request_type,
+            priority
+        )
     )
 
     request_id = cursor.lastrowid
@@ -93,6 +100,7 @@ def add_request(
     request = {
         "id": request_id,
         "student_name": student_name,
+        "student_id": student_id,
         "problem": problem,
         "request_type": request_type,
         "priority": priority

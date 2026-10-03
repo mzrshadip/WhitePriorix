@@ -54,6 +54,11 @@ function displayQueue(queue) {
             <h3>#${index + 1} ${request.student_name}</h3>
 
             <p>
+                <strong>Student ID:</strong>
+                ${request.student_id || "Not provided"}
+            </p>
+
+            <p>
                 <strong>Problem:</strong>
                 ${request.problem}
             </p>
@@ -97,6 +102,7 @@ serveButton.addEventListener("click", async function() {
             dashboardMessage.innerHTML =
                 `<strong>Now serving:</strong>
                  ${data.served_request.student_name}
+                 (ID: ${data.served_request.student_id || "N/A"})
                  — ${data.served_request.problem}`;
 
         } else {
