@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WhitePriorix | Staff Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>WhitePriorix</h1>
+            <p>Staff Dashboard</p>
+        </header>
+
+        <div class="card">
+
+            <h2>Waiting Queue</h2>
+
+            <p class="description">
+                Requests are automatically arranged according to priority.
+            </p>
+
+            <div id="queue">
+                Loading queue...
+            </div>
+
+            <button id="serveButton">
+                Serve Next Request
+            </button>
+
+            <div id="dashboardMessage"></div>
+
+        </div>
+
+    </div>
+
+    <script src="./dashboard.js"></script>
+
+</body>
+
+</html>

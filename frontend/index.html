@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WhitePriorix</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>WhitePriorix</h1>
+            <p>Smart Priority-Based Service Queue</p>
+        </header>
+
+        <div class="card">
+
+            <h2>Submit a Request</h2>
+
+            <form id="requestForm">
+
+                <label>Student Name</label>
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label>Problem</label>
+                <textarea
+                    id="problem"
+                    placeholder="Describe your problem"
+                    required
+                ></textarea>
+
+                <label>Request Type</label>
+
+                <select id="requestType" required>
+
+                    <option value="">Choose request type</option>
+
+                    <option value="emergency">
+                        Emergency / Safety Issue
+                    </option>
+
+                    <option value="exam_today">
+                        Exam Today
+                    </option>
+
+                    <option value="payment_deadline">
+                        Payment Deadline Today
+                    </option>
+
+                    <option value="registration">
+                        Registration Problem
+                    </option>
+
+                    <option value="academic_question">
+                        Academic Question
+                    </option>
+
+                    <option value="general_information">
+                        General Information
+                    </option>
+
+                </select>
+
+                <button type="submit">
+                    Submit Request
+                </button>
+
+            </form>
+
+            <!-- Result message -->
+            <div id="message"></div>
+
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
