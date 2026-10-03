@@ -1,6 +1,8 @@
 const form = document.getElementById("requestForm");
 const message = document.getElementById("message");
 
+const API_URL = "https://whitepriorix.onrender.com";
+
 console.log("WhitePriorix JavaScript loaded");
 
 form.addEventListener("submit", async function(event) {
@@ -17,7 +19,7 @@ form.addEventListener("submit", async function(event) {
 
     try {
         const url =
-            "http://127.0.0.1:8000/requests?" +
+            API_URL + "/requests?" +
             "student_name=" + encodeURIComponent(studentName) +
             "&student_id=" + encodeURIComponent(studentId) +
             "&problem=" + encodeURIComponent(problem) +

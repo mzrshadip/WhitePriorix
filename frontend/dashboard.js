@@ -2,6 +2,8 @@ const queueContainer = document.getElementById("queue");
 const serveButton = document.getElementById("serveButton");
 const dashboardMessage = document.getElementById("dashboardMessage");
 
+const API_URL = "https://whitepriorix.onrender.com";
+
 
 // Load queue
 async function loadQueue() {
@@ -9,7 +11,7 @@ async function loadQueue() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/queue"
+            API_URL + "/queue"
         );
 
         const data = await response.json();
@@ -86,7 +88,7 @@ serveButton.addEventListener("click", async function() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/serve-next",
+            API_URL + "/serve-next",
             {
                 method: "POST"
             }
